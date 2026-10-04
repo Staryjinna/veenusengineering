@@ -1,0 +1,576 @@
+[
+  {
+    "file": "service-11.jpg",
+    "category": "ss-gates",
+    "alt": "Black and stainless steel double gate with laser-cut sunburst and wave panels",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ss-gates-service-11.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-12.jpg",
+    "category": "ss-gates",
+    "alt": "Black double gate with stainless steel strips and brass-toned centre border at a house entrance",
+    "include": true,
+    "src": "/images/gallery/ss-gates-service-12.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-13.jpg",
+    "category": "ss-gates",
+    "alt": "Black gate with white laser-cut floral panels and gold sun-disc detailing",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ss-gates-service-13.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-15.jpg",
+    "category": "ss-gates",
+    "alt": "Stainless steel gate with laser-cut floral panels and wood-finish infill",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ss-gates-service-15.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-1.jpg",
+    "category": "ss-gates",
+    "alt": "Stainless steel gate frame with wood-finish panels and curved pull handles",
+    "include": true,
+    "src": "/images/gallery/ss-gates-service-1.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "gallery45.jpg",
+    "category": "ss-gates",
+    "alt": "Sliding stainless steel gate with wood-finish panels and horizontal steel bars",
+    "include": true,
+    "src": "/images/gallery/ss-gates-gallery45.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "gallery5.jpg",
+    "category": "ss-gates",
+    "alt": "Black and stainless steel gate with laser-cut patterns",
+    "include": false,
+    "note": "Duplicate of service-11.jpg"
+  },
+  {
+    "file": "service-2.jpg",
+    "category": "ss-railings",
+    "alt": "Stainless steel staircase railing with turned balusters",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ss-railings-service-2.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-21.jpg",
+    "category": "ss-railings",
+    "alt": "Terrace railing with etched floral glass panels and stainless steel top rail",
+    "include": true,
+    "src": "/images/gallery/ss-railings-service-21.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-22.jpg",
+    "category": "ss-railings",
+    "alt": "Outdoor stainless steel staircase with horizontal rail bars",
+    "include": true,
+    "src": "/images/gallery/ss-railings-service-22.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-23.jpg",
+    "category": "ss-railings",
+    "alt": "Modern stainless steel balustrade with rectangular open-frame balusters",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ss-railings-service-23.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-24.jpg",
+    "category": "ss-railings",
+    "alt": "Stainless steel staircase railing with ornamental scrollwork and brass-toned accents",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ss-railings-service-24.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-25.jpg",
+    "category": "ss-railings",
+    "alt": "Stainless steel stair railing with etched floral glass and ball-cap newel post",
+    "include": true,
+    "src": "/images/gallery/ss-railings-service-25.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-3.jpg",
+    "category": "ms-gates",
+    "alt": "Black mild steel double gate with perforated decorative pattern",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ms-gates-service-3.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-31.jpg",
+    "category": "ms-gates",
+    "alt": "Blue-painted mild steel gate with laser-cut floral panels",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ms-gates-service-31.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-32.jpg",
+    "category": "ms-gates",
+    "alt": "Grey mild steel gate with louvred sections and floral cut-out side panels",
+    "include": true,
+    "src": "/images/gallery/ms-gates-service-32.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-33.jpg",
+    "category": "ms-gates",
+    "alt": "Dark grey vertical-bar mild steel gate with Greek-key border",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ms-gates-service-33.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-34.jpg",
+    "category": "ms-gates",
+    "alt": "White and charcoal horizontal-slat steel gate with floral cut-out panels",
+    "include": true,
+    "src": "/images/gallery/ms-gates-service-34.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-41.jpg",
+    "category": "ms-grills",
+    "alt": "Welded mild steel grill frame with geometric pattern laid out in the workshop yard",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ms-grills-service-41.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-42.jpg",
+    "category": "ms-grills",
+    "alt": "Galvanised steel grill frame with angular geometric pattern",
+    "include": true,
+    "src": "/images/gallery/ms-grills-service-42.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-43.jpg",
+    "category": "ms-grills",
+    "alt": "Steel door grill with sunburst bar pattern in a dark frame",
+    "include": true,
+    "src": "/images/gallery/ms-grills-service-43.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-44.jpg",
+    "category": "ms-grills",
+    "alt": "Collapsible gold-finish steel gate with diamond lattice",
+    "include": true,
+    "src": "/images/gallery/ms-grills-service-44.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-45.jpg",
+    "category": "ms-grills",
+    "alt": "Black window grill with interlocking rectangular pattern on a plastered wall",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ms-grills-service-45.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-4.jpg",
+    "category": "ms-grills",
+    "alt": "Window grill with diamond motif in a black steel frame",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ms-grills-service-4.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-5.jpg",
+    "category": "rolling-shutters",
+    "alt": "Steel rolling shutter installed in a shop opening",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/rolling-shutters-service-5.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-54.jpg",
+    "category": "rolling-shutters",
+    "alt": "Grey rolling shutter with side guide rails installed in a building",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/rolling-shutters-service-54.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-52.jpg",
+    "category": "rolling-shutters",
+    "alt": "Rolling shutter slats and roller assemblies laid out before installation",
+    "include": true,
+    "src": "/images/gallery/rolling-shutters-service-52.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-51.jpg",
+    "category": "rolling-shutters",
+    "alt": "Rolling shutter",
+    "include": false,
+    "note": "Looks like a catalogue render, not a Veenus project"
+  },
+  {
+    "file": "service-53.jpg",
+    "category": "rolling-shutters",
+    "alt": "Rolling shutter",
+    "include": false,
+    "note": "Carries another company's watermark (Gabria Rolling Shutter)"
+  },
+  {
+    "file": "gallery4.jpg",
+    "category": "roofing",
+    "alt": "Multi-pitch steel canopy structure with sheet roofing over a paved area",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/roofing-gallery4.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "gallery3.jpg",
+    "category": "roofing",
+    "alt": "Interior of a steel-framed industrial shed with sheet roofing",
+    "include": true,
+    "src": "/images/gallery/roofing-gallery3.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "gallery32.jpg",
+    "category": "roofing",
+    "alt": "Steel portal frame of an industrial building under construction",
+    "include": true,
+    "src": "/images/gallery/roofing-gallery32.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "gallery43.jpg",
+    "category": "roofing",
+    "alt": "Large steel roof truss frame under construction against a blue sky",
+    "include": true,
+    "src": "/images/gallery/roofing-gallery43.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-61.jpg",
+    "category": "roofing",
+    "alt": "Steel porch and carport roof with decorative columns and sheet roofing",
+    "include": true,
+    "src": "/images/gallery/roofing-service-61.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-62.jpg",
+    "category": "roofing",
+    "alt": "Welders fabricating a large steel canopy frame on site",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/roofing-service-62.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-63.jpg",
+    "category": "roofing",
+    "alt": "Black steel carport with trussed gable roof",
+    "include": true,
+    "src": "/images/gallery/roofing-service-63.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-64.jpg",
+    "category": "roofing",
+    "alt": "Black steel carport with slatted roof and wood-finish side screen",
+    "include": true,
+    "src": "/images/gallery/roofing-service-64.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-6.jpg",
+    "category": "roofing",
+    "alt": "Red tile-profile roofing sheets on a steel frame over a house extension",
+    "include": true,
+    "src": "/images/gallery/roofing-service-6.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "carousel-3.jpg",
+    "category": "roofing",
+    "alt": "Large blue steel truss roof over an industrial hall",
+    "include": true,
+    "featured": true,
+    "note": "Hero image. Confirm it is a Veenus project.",
+    "src": "/images/gallery/roofing-carousel-3.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "carousel-1.jpg",
+    "category": "roofing",
+    "alt": "Blue arched steel truss roof over an open hall",
+    "include": false,
+    "note": "Landscape does not look local and the file is upscaled. Likely not a Veenus project"
+  },
+  {
+    "file": "gallery41.jpg",
+    "category": "roofing",
+    "alt": "Blue arched steel truss roof",
+    "include": false,
+    "note": "Duplicate of carousel-1.jpg"
+  },
+  {
+    "file": "gallery42.jpg",
+    "category": "roofing",
+    "alt": "Blue steel truss roof",
+    "include": false,
+    "note": "Duplicate of carousel-3.jpg (500px version)"
+  },
+  {
+    "file": "carousel-2.jpg",
+    "category": "kerala-roofing",
+    "alt": "Maroon steel roof frame with decorative edge trim ready for tiling",
+    "include": true,
+    "featured": true,
+    "note": "Hi-res version of gallery33.jpg",
+    "src": "/images/gallery/kerala-roofing-carousel-2.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "file": "gallery31.jpg",
+    "category": "kerala-roofing",
+    "alt": "Underside of a clay-tile hip roof on steel rafters",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/kerala-roofing-gallery31.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "gallery34.jpg",
+    "category": "kerala-roofing",
+    "alt": "Hip-roof steel frame built on a masonry wall",
+    "include": true,
+    "src": "/images/gallery/kerala-roofing-gallery34.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-7.jpg",
+    "category": "kerala-roofing",
+    "alt": "Terracotta-tone tile ceiling on a Kerala-style gabled roof frame",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/kerala-roofing-service-7.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-71.jpg",
+    "category": "kerala-roofing",
+    "alt": "Red-roofed gazebo shown from three angles",
+    "include": true,
+    "src": "/images/gallery/kerala-roofing-service-71.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-73.jpg",
+    "category": "kerala-roofing",
+    "alt": "Garden gazebo with red tile roof on black steel posts",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/kerala-roofing-service-73.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "gallery33.jpg",
+    "category": "kerala-roofing",
+    "alt": "Maroon steel roof frame",
+    "include": false,
+    "note": "Duplicate of carousel-2.jpg (500px version)"
+  },
+  {
+    "file": "service-8.jpg",
+    "category": "ss-furniture",
+    "alt": "Stainless steel dining table with matching high stools",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ss-furniture-service-8.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-81.jpg",
+    "category": "ss-furniture",
+    "alt": "Rows of stainless steel canteen tables and benches in a hall",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/ss-furniture-service-81.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-82.jpg",
+    "category": "ss-furniture",
+    "alt": "Stainless steel wash trough with three taps",
+    "include": true,
+    "src": "/images/gallery/ss-furniture-service-82.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-85.jpg",
+    "category": "ss-furniture",
+    "alt": "Stainless steel folding table with polished top and curved legs",
+    "include": true,
+    "src": "/images/gallery/ss-furniture-service-85.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-86.jpg",
+    "category": "ss-furniture",
+    "alt": "Stainless steel work table with lower shelf in a workshop",
+    "include": true,
+    "src": "/images/gallery/ss-furniture-service-86.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-83.jpg",
+    "category": "ss-furniture",
+    "alt": "Stainless steel table with stools",
+    "include": false,
+    "note": "White-background catalogue shot, not a Veenus project photo"
+  },
+  {
+    "file": "service-84.jpg",
+    "category": "ss-furniture",
+    "alt": "Stainless steel sink table",
+    "include": false,
+    "note": "White-background catalogue shot"
+  },
+  {
+    "file": "service-87.jpg",
+    "category": "ss-furniture",
+    "alt": "Stainless steel table with bench",
+    "include": false,
+    "note": "White-background catalogue shot"
+  },
+  {
+    "file": "service-88.jpg",
+    "category": "ss-furniture",
+    "alt": "Stainless steel double-sink cabinet",
+    "include": false,
+    "note": "White-background catalogue shot"
+  },
+  {
+    "file": "service-89.jpg",
+    "category": "ss-furniture",
+    "alt": "Stainless steel three-bowl sink",
+    "include": false,
+    "note": "White-background catalogue shot"
+  },
+  {
+    "file": "gallery44.jpg",
+    "category": "other",
+    "alt": "Multi-storey steel structural frame with railings",
+    "include": true,
+    "src": "/images/gallery/other-gallery44.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-72.jpg",
+    "category": "other",
+    "alt": "Laser-cut circular pattern panels forming a decorative ceiling",
+    "include": true,
+    "featured": true,
+    "src": "/images/gallery/other-service-72.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-74.jpg",
+    "category": "other",
+    "alt": "Laser-cut leaf-pattern steel panel under a canopy",
+    "include": true,
+    "src": "/images/gallery/other-service-74.webp",
+    "width": 500,
+    "height": 400
+  },
+  {
+    "file": "service-14.jpg",
+    "category": "ms-gates",
+    "alt": "Black double gate with decorative scrollwork",
+    "include": false,
+    "note": "Looks like a computer-generated render, not a photo"
+  },
+  {
+    "file": "about.jpg",
+    "category": "other",
+    "alt": "Collage",
+    "include": false,
+    "note": "Template collage image"
+  }
+]
