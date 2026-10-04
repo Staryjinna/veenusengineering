@@ -1,0 +1,29 @@
+# For cPanel / Apache shared hosting. Upload together with the rest of out/.
+Options -Indexes
+DirectoryIndex index.html
+
+# Old template URLs -> new URLs (301). Skip /index.html: it is the home page.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^about\.html$    /about/          [R=301,L]
+RewriteRule ^service\.html$  /services/       [R=301,L]
+RewriteRule ^gallery\.html$  /projects/       [R=301,L]
+RewriteRule ^contact\.html$  /contact/        [R=301,L]
+RewriteRule ^terms\.html$    /terms/          [R=301,L]
+RewriteRule ^return\.html$   /refund-policy/  [R=301,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+</IfModule>

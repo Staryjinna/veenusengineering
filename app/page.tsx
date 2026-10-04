@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { preload } from 'react-dom';
 import Link from 'next/link';
 import { Button, Photo, SectionHead } from '@/components/ui';
 import ServiceCard from '@/components/ServiceCard';
@@ -32,6 +33,8 @@ const featured = (() => {
 })();
 
 export default function Home() {
+  // Start fetching the hero image before the browser reaches the <img> tag (LCP element)
+  preload('/images/hero-1920.webp', { as: 'image', fetchPriority: 'high', imageSrcSet: '/images/hero-720.webp 720w, /images/hero-1200.webp 1200w, /images/hero-1920.webp 1920w', imageSizes: '100vw' });
   return (
     <>
       {/* ───────── Hero ───────── */}
@@ -39,13 +42,13 @@ export default function Home() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/hero-1920.webp"
-          srcSet="/images/hero-960.webp 960w, /images/hero-1920.webp 1920w"
+          srcSet="/images/hero-720.webp 720w, /images/hero-1200.webp 1200w, /images/hero-1920.webp 1920w"
           sizes="100vw"
           width={1920}
           height={1080}
           alt="Blue steel roof trusses spanning a large industrial hall fabricated by Veenus Engineering"
           fetchPriority="high"
-          className="hero-photo absolute inset-0 -z-20 h-full w-full object-cover object-[60%_30%]"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-[60%_30%]"
         />
         <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/55 to-ink/10 md:bg-gradient-to-r md:from-ink md:via-ink/75 md:to-transparent" />
         <div aria-hidden className="absolute inset-x-0 bottom-0 -z-10 h-3/4 bg-gradient-to-t from-ink/90 to-transparent md:hidden" />
@@ -166,7 +169,7 @@ export default function Home() {
             {processSteps.map((s, i) => (
               <li key={s.title} className="relative border-l-2 border-steel-300 pb-10 pl-6 last:pb-0 lg:border-l-0 lg:border-t-[3px] lg:border-t-ink lg:pb-0 lg:pl-0 lg:pt-6">
                 <span aria-hidden className="absolute -left-[7px] top-1 h-3 w-3 bg-weld lg:-top-[8px] lg:left-0" />
-                <p className="font-display text-6xl font-bold leading-none text-steel-200 sm:text-7xl" aria-hidden>{String(i + 1).padStart(2, '0')}</p>
+                <p className="font-display text-6xl font-bold leading-none text-steel-500 sm:text-7xl" aria-hidden>{String(i + 1).padStart(2, '0')}</p>
                 <h3 className="mt-2 text-2xl">{s.title}</h3>
                 <p className="mt-2 text-steel-600">{s.text}</p>
               </li>
