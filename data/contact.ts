@@ -42,10 +42,10 @@ export const hours = [
 
 export const hoursSummary = 'Mon–Fri 9–7 · Sat 9–12';
 
-// Towns we show as the service area. OPEN QUESTION: confirm the exact list with the client.
+// Towns shown as the service area. Accepted for now; the client will confirm the final list later.
 export const serviceArea = {
   headline: 'Vaniyambadi and Tirupathur district',
   towns: ['Vaniyambadi', 'Tirupathur', 'Ambur', 'Jolarpet', 'Natrampalli', 'Alangayam'],
   note: 'Outside this area? Message us on WhatsApp and we will tell you if we can take the job.',
-  confirmed: false,
+  confirmed: false, // flip to true once the client signs off the list
 } as const;

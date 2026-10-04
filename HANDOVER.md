@@ -9,7 +9,7 @@
 5. **Testimonials.** Are Ram Kumar, Pavithra, Sunil Kumar and Mohammed Abdullah real customers who agreed to be quoted? Better: replace them with real Google reviews.
 6. **Photos.** Are all gallery photos Veenus projects? Several look like they were found online (see section 3). Please send original photos, ideally 1600px wide or larger.
 7. **Logo.** The supplied logo is 170×100 px. Please send a vector or high-resolution file.
-8. **Service area.** Which towns do you serve? The site lists Vaniyambadi, Tirupathur, Ambur, Jolarpet, Natrampalli and Alangayam as a guess.
+8. **Service area (shown for now, confirm later).** The site lists Vaniyambadi, Tirupathur, Ambur, Jolarpet, Natrampalli and Alangayam. Edit `serviceArea.towns` in `data/contact.ts` once the client confirms.
 9. **Materials and finishes.** Which stainless grades (202 / 304) do you use? Powder coating? Motorised gates and shutters? Pages present these as questions, not claims.
 10. **Hydraulic machinery and custom fabrication.** These are mentioned on the old About page. Do they deserve their own service pages?
 11. **Business facts for About.** Founding year, owner name and story, team size, workshop description.
@@ -22,7 +22,7 @@
 - About page: founding year / founder story (marked on the page), **workshop photo, team photo, owner portrait** (dashed placeholder boxes)
 - Testimonials (`verified: false`, tagged "Awaiting client confirmation" on Home). Replace with Google reviews
 - Stats (hidden): years in business, towns served
-- Service-area town list (`data/contact.ts`, `confirmed: false`)
+- Service-area town list (`data/contact.ts`): live on the site for now, to be confirmed by the client
 - Service pages: material / finish / grade questions, and FAQ answers on timelines and pricing, should be checked by the client
 - Open Graph image (`public/images/og.jpg`) is generated from the hero photo. Replace with a branded image
 - Logo is low resolution (emblem plus typeset name used in the header)
