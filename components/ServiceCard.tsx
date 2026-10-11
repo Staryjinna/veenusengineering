@@ -8,6 +8,7 @@ export default function ServiceCard({ service, index }: { service: Service; inde
     <li className="group relative flex flex-col overflow-hidden border border-steel-200 bg-white transition-colors hover:border-weld">
       <div className="relative aspect-[5/4] overflow-hidden bg-steel-200">
         <Photo
+          thumb
           photo={serviceCardPhoto(service)}
           alt={`${service.name}: ${serviceCardPhoto(service).alt}`}
           sizes="(min-width:1024px) 280px, (min-width:640px) 45vw, 100vw"

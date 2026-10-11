@@ -24,7 +24,7 @@ export default function LegalPage({ policy, other }: { policy: Policy; other: { 
           <div className="mt-5"><Button href={other.href} variant="outline" size="sm">{other.label}</Button></div>
         </div>
       </section>
-      <CtaBand title="Questions first?" text="Ask us on WhatsApp before you decide." />
+      <CtaBand title="Questions first?" text="Ask us before you decide." />
     </>
   );
 }

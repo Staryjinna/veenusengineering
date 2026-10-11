@@ -30,20 +30,20 @@ export function SectionHead({ index, label, title, intro, className }: { index?:
     <header className={cx('max-w-3xl', className)}>
       <p className="eyebrow">{index && <span className="tabular-nums">{index} /</span>} {label}</p>
       <h2 className="h-section mt-3">{title}</h2>
-      {intro && <p className="mt-4 text-lg text-steel-600 [.on-dark_&]:text-steel-300">{intro}</p>}
+      {intro && <p className="mt-4 text-lg text-steel-600">{intro}</p>}
     </header>
   );
 }
 
 /** Plain <img> with explicit dimensions: static export, no runtime image server needed. */
-export function Photo({ photo, sizes, priority, className, alt }: { photo: PublishedPhoto; sizes?: string; priority?: boolean; className?: string; alt?: string }) {
+export function Photo({ photo, sizes, priority, className, alt, thumb }: { photo: PublishedPhoto; sizes?: string; priority?: boolean; className?: string; alt?: string; thumb?: boolean }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={photo.src}
+      src={thumb ? photo.thumb : photo.src}
       alt={alt ?? photo.alt}
-      width={photo.width}
-      height={photo.height}
+      width={thumb ? photo.thumbWidth : photo.width}
+      height={thumb ? photo.thumbHeight : photo.height}
       sizes={sizes}
       loading={priority ? 'eager' : 'lazy'}
       decoding="async"

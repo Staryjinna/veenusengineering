@@ -1,5 +1,5 @@
 export const processSteps = [
-  { title: 'Enquire', text: 'Send photos and rough size on WhatsApp, or call us. Tell us what you need and where.' },
+  { title: 'Enquire', text: 'Send photos and a rough size through the contact form. Tell us what you need and where.' },
   { title: 'Site visit & measurement', text: 'We visit, measure the opening or structure and discuss design, material and finish.' },
   { title: 'Quotation', text: 'You get a quotation for the agreed scope. Work starts after you approve it and pay the advance.' },
   { title: 'Fabrication', text: 'Your job is cut, welded and finished to the measurements taken on site.' },

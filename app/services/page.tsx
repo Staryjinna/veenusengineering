@@ -7,8 +7,8 @@ import { services } from '@/data/services';
 import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Services: Gates, Railings, Grills, Shutters, Roofing | Veenus Engineering',
-  description: 'SS gates, SS railings, MS gates, MS grills, rolling shutters, roofing, Kerala-type roofing and SS furniture, made and installed in Vaniyambadi and Tirupathur district.',
+  title: 'Services: Gates, Railings, Grills, Shutters, Roofing | Velan Industries',
+  description: 'SS gates, SS railings, MS gates, MS grills, rolling shutters, roofing, Kerala-type roofing and SS furniture, made and installed in Chennai.',
   alternates: { canonical: '/services/' },
 };
 
@@ -18,7 +18,7 @@ export default function ServicesPage() {
       <PageHero
         crumbs={[{ label: 'Services' }]}
         title="Our services"
-        intro="Stainless steel and mild steel fabrication for homes, shops and factories in Vaniyambadi and Tirupathur district. Designed, fabricated and installed by one team."
+        intro="Stainless steel and mild steel fabrication for homes, shops and factories in Chennai. Designed, fabricated and installed by one team."
       />
       <section className="py-14 sm:py-20">
         <div className="container-x">
@@ -26,7 +26,7 @@ export default function ServicesPage() {
             {services.map((s, i) => <ServiceCard key={s.slug} service={s} index={i} />)}
           </ul>
           <p className="mt-10 max-w-2xl text-steel-600">
-            We also take on custom fabrication and hydraulic machinery services. If your job is not listed above, message us with a photo or sketch and we will tell you if we can do it.
+            We also take on custom fabrication. If your job is not listed above, send us a photo or sketch and we will tell you if we can do it.
           </p>
         </div>
       </section>

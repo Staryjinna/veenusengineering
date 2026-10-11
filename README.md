@@ -1,85 +1,85 @@
-# Veenus Engineering website (redesign concept)
+# Velan Industries website
 
-Next.js (App Router, TypeScript) + Tailwind CSS v4, built as a **static export** (`out/`). No CMS, no database, no server needed.
+Steel works in Chennai: gates, railings, grills, rolling shutters, roofing and SS furniture.
+
+**Stack:** Next.js 16 (App Router, React 19, TypeScript 7), Tailwind CSS 4, self-hosted fonts, static export. No CMS, no database, no server needed.
 
 ```bash
 npm install
 npm run dev       # http://localhost:3000
-npm run build     # writes the static site to out/
+npm run build     # static site in out/
 npm run start     # preview out/ locally
 npm run lint      # type-check
+npm run images    # re-optimise photos after editing data/gallery.json
 ```
 
 Requires Node 20+.
 
 ## Where to edit things
 
-All content lives in `data/`. Nothing about the business is hard-coded in the page files.
+All content is in `data/`.
 
 | To change | Edit |
 |---|---|
-| Phone, WhatsApp number, email, address, map, hours, social links, service-area towns | `data/contact.ts` |
+| Phone, WhatsApp, email, address, map, hours, social links, service-area towns, owner name | `data/contact.ts` |
 | Service names, descriptions, uses, options, FAQs, SEO titles | `data/services.ts` |
-| Photos, categories, alt text, which photos are shown | `data/gallery.json` |
-| Testimonials | `data/testimonials.ts` |
-| Client / project counts | `data/stats.ts` (hidden until `CONFIRM_WITH_CLIENT = false`) |
-| "How it works" steps and "Why choose us" points | `data/process.ts` |
-| Terms and refund policy text | `data/policies.ts` |
-| Site URL (used in sitemap and structured data) | `business.siteUrl` in `data/contact.ts` |
+| Photos, categories, alt text, credits | `data/gallery.json` |
+| Customer reviews (section hidden while empty) | `data/testimonials.ts` |
+| Client / project counts (hidden until confirmed) | `data/stats.ts` |
+| "How it works" steps and "Why choose us" | `data/process.ts` |
+| Terms and refund policy | `data/policies.ts` |
+| Site URL for sitemap / SEO | `NEXT_PUBLIC_SITE_URL` env var, or `business.siteUrl` in `data/contact.ts` |
 
-### Adding or changing photos
+### Adding a phone number or WhatsApp later
 
-1. Drop the original into `assets/original/` (originals are never modified).
-2. Add an entry to `data/gallery.json`: `file`, `category`, a descriptive `alt`, `"include": true`. Add `"featured": true` to show it on the Home strip.
-3. Run `npm run images`. This writes WebP files (max 2000px wide, never upscaled) to `public/images/gallery/` and fills in each photo's `src`, `width` and `height`.
-4. To use a photo as a service's hero or card image, set `heroFile` / `cardFile` in `data/services.ts`.
+The phone number and WhatsApp are currently **removed**. In `data/contact.ts`:
 
-Set `"include": false` to hide a photo without deleting it. The `note` field records why.
+- set `phoneDisplay` and `phoneTel` (`'+919876543210'`) and **Call** buttons appear in the header, hero, footer and contact page;
+- set `whatsappNumber` (`'919876543210'`, digits only) and the quote buttons switch to WhatsApp, the quote form opens WhatsApp, and the floating WhatsApp button appears on phones;
+- fill `hours`, `instagram`, `youtube` the same way.
+
+Until then every "Get a quote" button goes to the contact form, which opens the visitor's email app with their details filled in and sends to `contact.email`.
+
+### Replacing the sample photos with Velan's own
+
+1. Put Velan's photos in `assets/stock/` (or rename the folder; update `SRC` in `scripts/optimise-images.mjs`).
+2. Edit `data/gallery.json`: one entry per photo with `file`, `category`, a descriptive `alt`, `"include": true`. Add `"featured": true` to show it on the Home strip. Remove the `credit` / `source` / `license` fields for your own photos.
+3. In `data/gallery.ts` set `usingSamplePhotos = false`. The "sample photos" notices disappear.
+4. Run `npm run images`. It writes WebP files (max 2000 px, never upscaled) and 800 px thumbnails to `public/images/gallery/`.
+5. To choose a service's hero or card photo, set `heroFile` / `cardFile` in `data/services.ts`.
 
 Categories: `ss-gates`, `ss-railings`, `ms-gates`, `ms-grills`, `rolling-shutters`, `roofing`, `kerala-roofing`, `ss-furniture`, `other`.
 
+Photos currently in the repo are Unsplash stock images; see `CREDITS.md`.
+
 ### Adding a service
 
-Add an object to the `services` array in `data/services.ts`. The page `/services/<slug>/`, the cards, footer links, sitemap and structured data are all generated from it.
+Add an object to `services` in `data/services.ts`. The page, cards, footer link, sitemap and structured data are generated from it.
 
 ## Deploy to Vercel
 
-1. Push this repo to GitHub and import it in Vercel.
-2. Framework preset: **Next.js**. No settings to change. `vercel.json` already holds the old-URL redirects and cache headers.
-3. Add the custom domain in the Vercel dashboard.
+1. Push the repo to GitHub and import it in Vercel (framework: Next.js, no settings to change).
+2. Add `NEXT_PUBLIC_SITE_URL` (for example `https://www.your-domain.in`) under Environment Variables.
+3. Add the custom domain.
 
 ## Upload to cPanel / shared hosting
 
 1. Run `npm run build`.
-2. Open the `out/` folder. In cPanel File Manager (or FTP), upload **everything inside `out/`** to `public_html/` (hidden files included, so `.htaccess` goes up too).
-3. Visit the site. Pages live at `/about/`, `/services/ss-gates/` and so on, each with its own `index.html`.
+2. Upload **everything inside `out/`** (including the hidden `.htaccess`) to `public_html/`.
 
-The old template URLs keep working: `.htaccess` redirects them on Apache, and the build also writes `about.html`, `service.html`, `gallery.html`, `contact.html`, `terms.html` and `return.html` as redirect stubs for hosts that ignore `.htaccess`.
-
-## Old URL map
-
-| Old | New |
-|---|---|
-| `/index.html` | `/` |
-| `/about.html` | `/about/` |
-| `/service.html` | `/services/` |
-| `/gallery.html` | `/projects/` |
-| `/contact.html` | `/contact/` |
-| `/terms.html` | `/terms/` |
-| `/return.html` | `/refund-policy/` |
+Pages live at `/about/`, `/services/ss-gates/` and so on, each with its own `index.html`.
 
 ## Structure
 
 ```
-app/            pages (App Router), sitemap.ts, robots.ts
-components/     Header, Footer, ServiceCard, PhotoGrid (filter + lightbox), QuoteForm, ...
-data/           all editable content
-lib/            WhatsApp link builder, JSON-LD schema builders
-scripts/        optimise-images.mjs, postbuild.mjs (redirect stubs), redirects.mjs
-assets/original untouched client photos
-public/images   optimised output
+app/             pages, sitemap.ts, robots.ts
+components/      Header, Footer, Actions (quote/call buttons), PhotoGrid (filter + lightbox), QuoteForm, ...
+data/            all editable content
+lib/             quote/WhatsApp helpers, JSON-LD builders
+scripts/         optimise-images.mjs
+assets/stock     source photos (untouched)
+assets/brand     logo
+public/images    optimised output
 ```
 
-Only two small client components ship JavaScript: the mobile menu and the photo grid / quote form.
-
-See **HANDOVER.md** for open questions, placeholders and the list of photos used.
+See **HANDOVER.md** for placeholders and open questions.

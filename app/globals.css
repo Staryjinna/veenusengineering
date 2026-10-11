@@ -4,7 +4,7 @@
   --font-display: var(--font-display), 'Arial Narrow', Impact, sans-serif;
   --font-sans: var(--font-body), system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  --color-ink: #0e1113;
+  --color-ink: #1d2328;
   --color-steel-900: #14181b;
   --color-steel-800: #1b2126;
   --color-steel-700: #272f36;
@@ -14,10 +14,11 @@
   --color-steel-300: #b4bec6;
   --color-steel-200: #d5dbe0;
   --color-steel-100: #eceff1;
-  --color-paper: #f5f6f7;
-  /* One accent: weld orange. -deep is the AA-safe version for text on light backgrounds. */
-  --color-weld: #ff6a13;
-  --color-weld-deep: #b83c05;
+  --color-paper: #ffffff;
+  --color-mist: #f5f7f9;
+  /* One accent: the logo's spark orange. -deep is the AA-safe version for text on white. */
+  --color-weld: #ef7828;
+  --color-weld-deep: #b24a0a;
   --color-wa: #1fa855;
 }
 
@@ -45,23 +46,20 @@
     outline-offset: 3px;
     border-radius: 2px;
   }
-  .on-dark :focus-visible { outline-color: #ffb27a; }
   ::selection { background: var(--color-weld); color: var(--color-ink); }
 }
 
 @layer components {
-  /* Blueprint grid used on dark sections */
+  /* Light blueprint grid: pale grey sheet with faint drafting lines */
   .blueprint {
-    background-color: var(--color-steel-900);
+    background-color: var(--color-mist);
     background-image:
-      linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px),
-      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      linear-gradient(rgba(29,35,40,.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(29,35,40,.055) 1px, transparent 1px),
+      linear-gradient(rgba(29,35,40,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(29,35,40,.03) 1px, transparent 1px);
     background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
   }
-  .on-dark { color: var(--color-steel-300); }
-  .on-dark h1, .on-dark h2, .on-dark h3, .on-dark h4 { color: #fff; }
 
   .container-x { width: 100%; max-width: 76rem; margin-inline: auto; padding-inline: 1rem; }
   @media (min-width: 640px) { .container-x { padding-inline: 1.5rem; } }
@@ -73,7 +71,6 @@
     font-family: var(--font-display); font-weight: 600; text-transform: uppercase;
     letter-spacing: .16em; font-size: .9rem; color: var(--color-weld-deep);
   }
-  .on-dark .eyebrow { color: var(--color-weld); }
   .eyebrow::before { content: ''; width: 1.75rem; height: 2px; background: currentColor; }
 
   .h-section { font-size: clamp(2.1rem, 6.2vw, 3.6rem); }
@@ -90,11 +87,11 @@
   }
   .btn:active { transform: translateY(1px); }
   .btn-primary { background: var(--color-weld); color: var(--color-ink); }
-  .btn-primary:hover { background: #ff8340; }
+  .btn-primary:hover { background: #f58c46; }
   .btn-dark { background: var(--color-ink); color: #fff; }
   .btn-dark:hover { background: var(--color-steel-700); }
-  .btn-ghost { border-color: rgba(255,255,255,.55); color: #fff; }
-  .btn-ghost:hover { background: #fff; color: var(--color-ink); }
+  .btn-ghost { border-color: var(--color-steel-300); color: var(--color-ink); background: #fff; }
+  .btn-ghost:hover { border-color: var(--color-ink); }
   .btn-outline { border-color: var(--color-ink); color: var(--color-ink); }
   .btn-outline:hover { background: var(--color-ink); color: #fff; }
   .btn-sm { min-height: 2.5rem; padding: .5rem .9rem; font-size: 1rem; }
@@ -104,7 +101,7 @@
   .weld-line::after {
     content: ''; position: absolute; right: -4px; top: 50%; width: 9px; height: 9px; border-radius: 50%;
     transform: translateY(-50%); background: #fff;
-    box-shadow: 0 0 6px 2px #fff, 0 0 14px 6px var(--color-weld), 0 0 34px 12px rgba(255,106,19,.55);
+    box-shadow: 0 0 0 2px var(--color-weld), 0 0 12px 5px rgba(239,120,40,.6), 0 0 30px 10px rgba(239,120,40,.35);
   }
 
   .prose-plain p { margin-top: 1em; }

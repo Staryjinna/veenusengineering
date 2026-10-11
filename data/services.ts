@@ -12,7 +12,7 @@ export type Service = {
   cardFile?: string;
   /** short line for cards */
   summary: string;
-  /** keyword phrase this page targets, e.g. "SS gate in Vaniyambadi" */
+  /** keyword phrase this page targets, e.g. "SS gate in Chennai" */
   keyword: string;
   seoTitle: string;
   seoDescription: string;
@@ -25,18 +25,18 @@ export type Service = {
   faqs: Faq[];
 };
 
-const area = 'Vaniyambadi and Tirupathur district';
+const area = 'Chennai and nearby areas';
 
 export const services: Service[] = [
   {
     slug: 'ss-gates',
     name: 'SS Gates',
     category: 'ss-gates',
-    heroFile: 'service-11.jpg',
+    heroFile: 'gate-gray.jpg',
     summary: 'Stainless steel main gates and compound gates, plain or with laser-cut panels.',
-    keyword: 'SS gate in Vaniyambadi',
-    seoTitle: 'SS Gate in Vaniyambadi & Tirupathur District | Veenus Engineering',
-    seoDescription: 'Custom stainless steel gates made and installed in Vaniyambadi and Tirupathur district. Swing and sliding SS gates for homes and shops. Get a free quote on WhatsApp.',
+    keyword: 'SS gate in Chennai',
+    seoTitle: 'SS Gate in Chennai | Velan Industries',
+    seoDescription: 'Custom stainless steel gates made and installed in Chennai. Swing and sliding SS gates for homes and shops. Request a free quote.',
     headline: 'Stainless steel gates, made to fit your entrance',
     intro: [
       'A stainless steel gate is the first thing people see at your house or shop. We design, fabricate and install SS gates in ' + area + ', measured to your opening and finished the way you choose.',
@@ -55,7 +55,7 @@ export const services: Service[] = [
     ],
     process: ['Share the entrance size and a reference photo', 'Site visit, measurement and design choice', 'Quotation, then fabrication in the workshop', 'Installation and hand-over inspection'],
     faqs: [
-      { q: 'How much does an SS gate cost?', a: 'It depends on the size, stainless steel grade, design and finish, so we do not quote a price without the details. Send a photo and approximate width on WhatsApp and we will tell you what we need to prepare a quotation.' },
+      { q: 'How much does an SS gate cost?', a: 'It depends on the size, stainless steel grade, design and finish, so we do not quote a price without the details. Send a photo and approximate width through the contact form and we will tell you what we need to prepare a quotation.' },
       { q: 'Do you install the gate as well?', a: 'Yes. We design, fabricate and install, so one team is responsible for the finished gate.' },
       { q: 'Can you copy a gate design I have seen?', a: 'Send us the photo. We will tell you whether we can build it as shown and what would need to change for your opening.' },
       { q: 'What does the warranty cover?', a: 'Warranty covers manufacturing defects only. It does not cover misuse, accidents, weather damage or poor maintenance. The full terms are on our Terms & Conditions page.' },
@@ -65,11 +65,11 @@ export const services: Service[] = [
     slug: 'ss-railings',
     name: 'SS Railing Works',
     category: 'ss-railings',
-    heroFile: 'service-24.jpg',
+    heroFile: 'rail-black.jpg',
     summary: 'Staircase, balcony and terrace railings in stainless steel, with glass or decorative balusters.',
-    keyword: 'SS railing in Vaniyambadi',
-    seoTitle: 'SS Railing Works in Vaniyambadi & Tirupathur District | Veenus Engineering',
-    seoDescription: 'Stainless steel staircase, balcony and terrace railings fabricated and installed in Vaniyambadi and Tirupathur district. Free quote on WhatsApp.',
+    keyword: 'SS railing in Chennai',
+    seoTitle: 'SS Railing Works in Chennai | Velan Industries',
+    seoDescription: 'Stainless steel staircase, balcony and terrace railings fabricated and installed in Chennai. Request a free quote.',
     headline: 'Stainless steel railings for stairs, balconies and terraces',
     intro: [
       'Railings need to be safe first and good-looking second. We fabricate and install stainless steel railings for staircases, balconies and terraces across ' + area + '.',
@@ -97,11 +97,11 @@ export const services: Service[] = [
     slug: 'ms-gates',
     name: 'MS Gates',
     category: 'ms-gates',
-    heroFile: 'service-33.jpg',
+    heroFile: 'gate-arch.jpg',
     summary: 'Strong mild steel gates, painted or powder-coated, with plain bars or decorative panels.',
-    keyword: 'MS gate in Vaniyambadi',
-    seoTitle: 'MS Gate in Vaniyambadi & Tirupathur District | Veenus Engineering',
-    seoDescription: 'Mild steel gates fabricated and installed in Vaniyambadi and Tirupathur district. Custom designs for homes, shops and factories. Free quote on WhatsApp.',
+    keyword: 'MS gate in Chennai',
+    seoTitle: 'MS Gate in Chennai | Velan Industries',
+    seoDescription: 'Mild steel gates fabricated and installed in Chennai. Custom designs for homes, shops and factories. Request a free quote.',
     headline: 'Mild steel gates built for security and everyday use',
     intro: [
       'Mild steel gives you a strong, secure gate at a lower cost than stainless steel. We fabricate MS gates for houses, shops and factories in ' + area + ', welded to your measurements and painted for the weather.',
@@ -129,11 +129,11 @@ export const services: Service[] = [
     slug: 'ms-grills',
     name: 'MS Grill Works',
     category: 'ms-grills',
-    heroFile: 'service-45.jpg',
+    heroFile: 'grill-window.jpg',
     summary: 'Window grills, door grills and collapsible gates in mild steel, plain or patterned.',
-    keyword: 'MS grill work in Vaniyambadi',
-    seoTitle: 'MS Grill Works in Vaniyambadi & Tirupathur District | Veenus Engineering',
-    seoDescription: 'Window grills, door grills and collapsible gates in mild steel, made and fitted in Vaniyambadi and Tirupathur district. Free quote on WhatsApp.',
+    keyword: 'MS grill work in Chennai',
+    seoTitle: 'MS Grill Works in Chennai | Velan Industries',
+    seoDescription: 'Window grills, door grills and collapsible gates in mild steel, made and fitted in Chennai. Request a free quote.',
     headline: 'Window grills and door grills with a clean finish',
     intro: [
       'A grill keeps a window or door secure without blocking light and air. We fabricate MS grills in ' + area + ', welded and finished to fit your frames.',
@@ -161,11 +161,11 @@ export const services: Service[] = [
     slug: 'rolling-shutters',
     name: 'Rolling Shutter Works',
     category: 'rolling-shutters',
-    heroFile: 'service-54.jpg',
+    heroFile: 'shut-gray.jpg',
     summary: 'Rolling shutters for shops, godowns and garages, made and installed with smooth operation.',
-    keyword: 'rolling shutter in Tirupathur',
-    seoTitle: 'Rolling Shutter in Vaniyambadi & Tirupathur District | Veenus Engineering',
-    seoDescription: 'Rolling shutters for shops, godowns and garages, made and installed in Vaniyambadi and Tirupathur district. Free quote on WhatsApp.',
+    keyword: 'rolling shutter in Chennai',
+    seoTitle: 'Rolling Shutter in Chennai | Velan Industries',
+    seoDescription: 'Rolling shutters for shops, godowns and garages, made and installed in Chennai. Request a free quote.',
     headline: 'Rolling shutters that open smoothly and lock securely',
     intro: [
       'A rolling shutter protects the shop or godown you open every morning, so it has to work every day. We fabricate and install rolling shutters in ' + area + ', measured to the opening.',
@@ -185,7 +185,7 @@ export const services: Service[] = [
     process: ['Share the opening width, height and type of use', 'Site visit and measurement, including headroom', 'Quotation, then fabrication', 'Installation, adjustment and operation check'],
     faqs: [
       { q: 'How much headroom does a rolling shutter need?', a: 'It needs space above the opening for the rolled-up shutter. We check this on the site visit and tell you what is possible.' },
-      { q: 'Can you service or repair an existing shutter?', a: 'Tell us on WhatsApp what the problem is and send a short video if you can. We will advise.' },
+      { q: 'Can you service or repair an existing shutter?', a: 'Tell us what the problem is and send a photo or short video if you can. We will advise.' },
       { q: 'Do you make motorised shutters?', a: 'Ask us when you enquire. We will confirm what we can supply for your opening.' },
     ],
   },
@@ -193,12 +193,12 @@ export const services: Service[] = [
     slug: 'roofing',
     name: 'Roofing Works',
     category: 'roofing',
-    heroFile: 'carousel-3.jpg',
-    cardFile: 'gallery4.jpg',
+    heroFile: 'roof-beams.jpg',
+    cardFile: 'truss-hall.jpg',
     summary: 'Steel roof structures, carports and industrial sheds, designed, fabricated and installed.',
-    keyword: 'roofing work in Vaniyambadi',
-    seoTitle: 'Roofing Works in Vaniyambadi & Tirupathur District | Veenus Engineering',
-    seoDescription: 'Steel roof trusses, industrial sheds, carports and sheet roofing in Vaniyambadi and Tirupathur district. Designed, fabricated and installed. Free quote on WhatsApp.',
+    keyword: 'roofing work in Chennai',
+    seoTitle: 'Roofing Works in Chennai | Velan Industries',
+    seoDescription: 'Steel roof trusses, industrial sheds, carports and sheet roofing in Chennai. Designed, fabricated and installed. Request a free quote.',
     headline: 'Steel roofing for sheds, carports and industrial buildings',
     intro: [
       'From a carport at home to a large factory hall, the roof has to carry its load and keep the weather out. We fabricate and install steel roof structures and sheet roofing in ' + area + '.',
@@ -226,11 +226,11 @@ export const services: Service[] = [
     slug: 'kerala-roofing',
     name: 'Kerala Type Roofing',
     category: 'kerala-roofing',
-    heroFile: 'service-7.jpg',
+    heroFile: 'tile-roof-close.jpg',
     summary: 'Traditional Kerala-style sloped roofs on a steel frame, with tile finish.',
-    keyword: 'Kerala type roofing in Vaniyambadi',
-    seoTitle: 'Kerala Type Roofing in Vaniyambadi & Tirupathur District | Veenus Engineering',
-    seoDescription: 'Kerala-style sloped roofing on a steel frame, fabricated and installed in Vaniyambadi and Tirupathur district. Free quote on WhatsApp.',
+    keyword: 'Kerala type roofing in Chennai',
+    seoTitle: 'Kerala Type Roofing in Chennai | Velan Industries',
+    seoDescription: 'Kerala-style sloped roofing on a steel frame, fabricated and installed in Chennai. Request a free quote.',
     headline: 'Kerala-style sloped roofs on a strong steel frame',
     intro: [
       'The sloped, tiled Kerala look suits verandahs, gazebos, porches and whole homes. We build the roof on a steel frame so it stays strong for years, serving ' + area + '.',
@@ -258,11 +258,11 @@ export const services: Service[] = [
     slug: 'ss-furniture',
     name: 'SS Furniture',
     category: 'ss-furniture',
-    heroFile: 'service-81.jpg',
+    heroFile: 'metal-table.jpg',
     summary: 'Stainless steel dining tables, canteen tables, work tables and wash troughs.',
-    keyword: 'SS dining table in Vaniyambadi',
-    seoTitle: 'SS Dining Tables & Furniture in Vaniyambadi | Veenus Engineering',
-    seoDescription: 'Custom stainless steel dining tables, canteen tables, work tables and wash troughs fabricated in Vaniyambadi, Tirupathur district. Free quote on WhatsApp.',
+    keyword: 'SS dining table in Chennai',
+    seoTitle: 'SS Dining Tables & Furniture in Chennai | Velan Industries',
+    seoDescription: 'Custom stainless steel dining tables, canteen tables, work tables and wash troughs fabricated in Chennai. Request a free quote.',
     headline: 'Stainless steel tables and furniture for homes and kitchens',
     intro: [
       'Stainless steel furniture is easy to clean and holds up to daily use. We fabricate dining tables, canteen tables and benches, work tables and wash troughs to your size in ' + area + '.',

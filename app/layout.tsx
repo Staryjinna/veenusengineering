@@ -26,21 +26,21 @@ const body = localFont({
   display: 'swap',
 });
 
-export const viewport: Viewport = { themeColor: '#0e1113', width: 'device-width', initialScale: 1 };
+export const viewport: Viewport = { themeColor: '#ffffff', width: 'device-width', initialScale: 1 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(business.siteUrl),
   title: {
-    default: 'Veenus Engineering | SS & MS Gates, Railings, Shutters, Roofing in Vaniyambadi',
+    default: 'Velan Industries | SS & MS Gates, Railings, Shutters, Roofing in Chennai',
     template: '%s',
   },
-  description: 'SS and MS gates, railings, grills, rolling shutters and roofing, designed, fabricated and installed in Vaniyambadi and Tirupathur district, Tamil Nadu. Get a free quote on WhatsApp.',
-  applicationName: 'Veenus Engineering',
+  description: 'SS and MS gates, railings, grills, rolling shutters and roofing, designed, fabricated and installed in Chennai. Request a free quote from Velan Industries.',
+  applicationName: 'Velan Industries',
   openGraph: {
     type: 'website',
-    siteName: 'Veenus Engineering',
+    siteName: 'Velan Industries',
     locale: 'en_IN',
-    images: [{ url: '/images/og.jpg', width: 1200, height: 630, alt: 'Veenus Engineering: steel fabrication in Vaniyambadi' }],
+    images: [{ url: '/images/og.jpg', width: 1200, height: 630, alt: 'Velan Industries: steel works in Chennai' }],
   },
   twitter: { card: 'summary_large_image' },
   alternates: { canonical: './' },

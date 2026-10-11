@@ -1,51 +1,54 @@
-// Single source of truth for contact details, hours and address.
-// Used by the header, footer, contact page, WhatsApp links and JSON-LD.
+// Single source of truth for contact details and address.
+// Optional fields (phone, WhatsApp, social links, hours): leave as null / [] and the site
+// hides every button and line that depends on them. Fill one in and it appears everywhere.
 
 export const business = {
-  name: 'Veenus Engineering',
-  tagline: 'Metal fabrication and installation in Vaniyambadi, Tirupathur district',
-  // OPEN QUESTION: site text says "Tirupathur", the Google Maps pin says "Vaniyambadi".
-  // Default used here: Vaniyambadi, Tirupathur district.
-  locality: 'Vaniyambadi',
-  district: 'Tirupathur district',
+  name: 'Velan Industries',
+  descriptor: 'Steel Works',
+  owner: 'Velan',
+  locality: 'Chennai',
   region: 'Tamil Nadu',
-  postalCode: '635751',
-  streetAddress: '351, Mariyamman Kovil St, Fort, Shakirabad',
-  geo: { lat: 12.67987, lng: 78.61412 },
-  siteUrl: 'https://veenusengineering.in',
-} as const;
+  tagline: 'Steel works in Chennai: gates, railings, shutters and roofing',
+  // PLACEHOLDER domain. Set NEXT_PUBLIC_SITE_URL in Vercel (or edit here) once the real domain is known.
+  // It feeds the sitemap, canonical links and structured data.
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://velanindustries.example',
+};
 
-export const contact = {
-  phoneDisplay: '+91 90475 11368',
-  phoneTel: '+919047511368',
-  whatsappNumber: '919047511368', // no "+" for wa.me
-  email: 'sales@veenusengineering.in',
-  instagram: 'https://www.instagram.com/veenusengineering',
-  youtube: 'https://youtube.com/@veenusengineeringvnb',
-  addressLines: [
-    '351, Mariyamman Kovil St, Fort, Shakirabad',
-    'Vaniyambadi, Tirupathur district',
-    'Tamil Nadu 635751',
-  ],
-  mapEmbedUrl:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.200644763109!2d78.61412326539435!3d12.679872080060797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bada9a738eb40e1%3A0x51934e533bf7cd23!2s351%2C%20Mariyamman%20Kovil%20St%2C%20Fort%2C%20Shakirabad%2C%20Vaniyambadi%2C%20Tamil%20Nadu%20635751!5e0!3m2!1sen!2sin!4v1779732015432!5m2!1sen!2sin',
-  mapLink: 'https://www.google.com/maps/search/?api=1&query=12.67987,78.61412',
-} as const;
+export const contact: {
+  phoneDisplay: string | null;
+  phoneTel: string | null;
+  /** digits only, country code first, no "+" (e.g. 919876543210). Enables WhatsApp buttons. */
+  whatsappNumber: string | null;
+  email: string;
+  instagram: string | null;
+  youtube: string | null;
+  addressLines: string[];
+  mapEmbedUrl: string;
+  mapLink: string;
+} = {
+  // Phone and WhatsApp intentionally removed for now.
+  phoneDisplay: null,
+  phoneTel: null,
+  whatsappNumber: null,
+  // PLACEHOLDER email. The quote form sends enquiries here. Replace before launch.
+  email: 'hello@velanindustries.example',
+  instagram: null,
+  youtube: null,
+  // TODO: add the full street address once known.
+  addressLines: ['Chennai', 'Tamil Nadu'],
+  mapEmbedUrl: 'https://www.google.com/maps?q=Chennai,+Tamil+Nadu&output=embed',
+  mapLink: 'https://www.google.com/maps/search/?api=1&query=Chennai%2C+Tamil+Nadu',
+};
 
-// OPEN QUESTION: the services page of the old site says "Mon-Sat 9 AM-8 PM".
-// Default used here is Mon-Fri 9-7, Sat 9-12, as on the contact page.
-export const hours = [
-  { label: 'Monday – Friday', short: 'Mon–Fri', time: '9:00 AM – 7:00 PM', days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '19:00' },
-  { label: 'Saturday', short: 'Sat', time: '9:00 AM – 12:00 PM', days: ['Saturday'], opens: '09:00', closes: '12:00' },
-  { label: 'Sunday', short: 'Sun', time: 'Closed', days: [], opens: '', closes: '' },
-] as const;
+export type HoursRow = { label: string; time: string; days: string[]; opens: string; closes: string };
+// TODO: opening hours not provided yet. Add rows like
+// { label: 'Monday – Saturday', time: '9:00 AM – 6:00 PM', days: ['Monday', ...], opens: '09:00', closes: '18:00' }
+export const hours: HoursRow[] = [];
 
-export const hoursSummary = 'Mon–Fri 9–7 · Sat 9–12';
-
-// Towns shown as the service area. Accepted for now; the client will confirm the final list later.
+// Areas shown as the service area. PLACEHOLDER list: confirm with Velan.
 export const serviceArea = {
-  headline: 'Vaniyambadi and Tirupathur district',
-  towns: ['Vaniyambadi', 'Tirupathur', 'Ambur', 'Jolarpet', 'Natrampalli', 'Alangayam'],
-  note: 'Outside this area? Message us on WhatsApp and we will tell you if we can take the job.',
-  confirmed: false, // flip to true once the client signs off the list
-} as const;
+  headline: 'Chennai and nearby areas',
+  towns: ['Chennai', 'Ambattur', 'Guindy', 'Avadi', 'Tambaram', 'Poonamallee', 'Sriperumbudur'],
+  note: 'Outside this area? Send us a message and we will tell you if we can take the job.',
+  confirmed: false,
+};

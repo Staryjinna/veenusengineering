@@ -3,8 +3,8 @@ import LegalPage from '@/components/LegalPage';
 import { refund } from '@/data/policies';
 
 export const metadata: Metadata = {
-  title: 'Return & Refund Policy | Veenus Engineering',
-  description: 'How returns, cancellations and refunds work for custom fabrication jobs at Veenus Engineering.',
+  title: 'Return & Refund Policy | Velan Industries',
+  description: 'How returns, cancellations and refunds work for custom fabrication jobs at Velan Industries.',
   alternates: { canonical: '/refund-policy/' },
 };
 

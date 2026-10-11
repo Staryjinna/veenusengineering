@@ -1,9 +1,9 @@
-// Wording condensed from the existing website. Have the client (and ideally a lawyer) review before launch.
+// Starter wording carried over from a sister template site and renamed. Have Velan Industries (and ideally a lawyer) review before launch.
 export type Policy = { title: string; intro: string; clauses: { heading: string; text: string }[] };
 
 export const terms: Policy = {
   title: 'Terms & Conditions',
-  intro: 'These terms apply to fabrication and installation work done by Veenus Engineering.',
+  intro: 'These terms apply to fabrication and installation work done by Velan Industries.',
   clauses: [
     { heading: 'Starting work', text: 'Work starts after you approve the quotation and pay the advance.' },
     { heading: 'Timelines', text: 'Delivery and installation dates can change with material availability and site conditions. We will tell you as early as we can.' },
@@ -23,7 +23,7 @@ export const refund: Policy = {
   clauses: [
     { heading: 'Custom work', text: 'Custom, project-based work cannot be returned once work has started.' },
     { heading: 'Advance payment', text: 'The advance paid for materials and booking is generally not refundable.' },
-    { heading: 'When we refund', text: 'A refund is considered only if Veenus Engineering cannot proceed with the agreed project.' },
+    { heading: 'When we refund', text: 'A refund is considered only if Velan Industries cannot proceed with the agreed project.' },
     { heading: 'Defects', text: 'Report any defect to us immediately after the work is completed.' },
     { heading: 'Cancellations', text: 'Ask to cancel before work starts. We cannot cancel once fabrication has begun.' },
     { heading: 'Refund timing', text: 'Approved refunds are processed within 7 to 14 business days to the original payment method.' },

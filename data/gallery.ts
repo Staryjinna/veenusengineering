@@ -11,12 +11,22 @@ export type GalleryItem = {
   include: boolean;
   featured?: boolean;
   note?: string;
+  credit?: string;
+  source?: string;
+  license?: string;
   src?: string;
   width?: number;
   height?: number;
+  thumb?: string;
+  thumbWidth?: number;
+  thumbHeight?: number;
 };
 
-export type PublishedPhoto = GalleryItem & { src: string; width: number; height: number };
+export type PublishedPhoto = GalleryItem & { src: string; width: number; height: number; thumb: string; thumbWidth: number; thumbHeight: number };
+
+// The photos are free-licence stock images (Unsplash), not Velan Industries projects.
+// Set to false once the gallery holds Velan's own project photos; the "sample" notices disappear.
+export const usingSamplePhotos = true;
 
 export const categories: { slug: CategorySlug; label: string }[] = [
   { slug: 'ss-gates', label: 'SS Gates' },
@@ -32,7 +42,7 @@ export const categories: { slug: CategorySlug; label: string }[] = [
 
 // Only photos marked include:true in gallery.json are published.
 export const photos: PublishedPhoto[] = (raw as GalleryItem[]).filter(
-  (p): p is PublishedPhoto => p.include && !!p.src && !!p.width && !!p.height,
+  (p): p is PublishedPhoto => p.include && !!p.src && !!p.width && !!p.height && !!p.thumb,
 );
 
 export const photosByCategory = (slug: CategorySlug) => photos.filter((p) => p.category === slug);

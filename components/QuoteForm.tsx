@@ -1,11 +1,12 @@
 'use client';
 import { useState } from 'react';
-import { WhatsAppIcon } from './Icons';
+import { ArrowIcon, MailIcon, WhatsAppIcon } from './Icons';
 import { services } from '@/data/services';
-import { waLink } from '@/lib/whatsapp';
+import { hasWhatsApp, mailtoLink, waLink } from '@/lib/quote';
 
 const field = 'mt-1.5 block w-full border-2 border-steel-300 bg-white px-4 py-3 text-base text-ink placeholder:text-steel-400 focus:border-ink';
 
+/** Opens WhatsApp when a number is configured, otherwise the visitor's email app, with the details pre-filled. */
 export default function QuoteForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -15,34 +16,35 @@ export default function QuoteForm() {
     const get = (k: string) => String(f.get(k) ?? '').trim();
     const errs: Record<string, string> = {};
     if (!get('name')) errs.name = 'Please enter your name.';
-    if (!/^[+\d][\d\s-]{7,}$/.test(get('phone'))) errs.phone = 'Please enter a valid phone number.';
+    if (!/^[+\d][\d\s-]{7,}$/.test(get('phone'))) errs.phone = 'Please enter a valid phone number so we can reach you.';
     setErrors(errs);
     if (Object.keys(errs).length) {
       (e.currentTarget.querySelector('[aria-invalid="true"]') as HTMLElement | null)?.focus();
       return;
     }
     const lines = [
-      'Hello Veenus Engineering, I would like a free quote.',
+      'Hello Velan Industries, I would like a free quote.',
       `Name: ${get('name')}`,
       `Phone: ${get('phone')}`,
       `Service: ${get('service') || 'Not sure yet'}`,
       get('location') && `Location: ${get('location')}`,
       get('notes') && `Size / notes: ${get('notes')}`,
-    ].filter(Boolean);
-    window.open(waLink(lines.join('\n')), '_blank', 'noopener');
+    ].filter(Boolean) as string[];
+    if (hasWhatsApp) window.open(waLink(lines.join('\n')), '_blank', 'noopener');
+    else window.location.href = mailtoLink(`Quote request: ${get('service') || 'Steel work'}`, lines.join('\n'));
   }
 
   const err = (k: string) => errors[k] && <p id={`${k}-err`} className="mt-1 text-sm font-semibold text-red-700">{errors[k]}</p>;
 
   return (
-    <form onSubmit={onSubmit} noValidate className="grid gap-5 border border-steel-200 bg-white p-5 sm:p-8">
+    <form onSubmit={onSubmit} noValidate className="grid gap-5 border border-steel-200 bg-white p-5 shadow-sm sm:p-8">
       <div>
         <label htmlFor="name" className="font-semibold text-ink">Your name</label>
         <input id="name" name="name" autoComplete="name" required aria-invalid={!!errors.name} aria-describedby={errors.name ? 'name-err' : undefined} className={field} />
         {err('name')}
       </div>
       <div>
-        <label htmlFor="phone" className="font-semibold text-ink">Phone number</label>
+        <label htmlFor="phone" className="font-semibold text-ink">Your phone number</label>
         <input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" required placeholder="+91" aria-invalid={!!errors.phone} aria-describedby={errors.phone ? 'phone-err' : undefined} className={field} />
         {err('phone')}
       </div>
@@ -57,17 +59,21 @@ export default function QuoteForm() {
         </div>
         <div>
           <label htmlFor="location" className="font-semibold text-ink">Location</label>
-          <input id="location" name="location" autoComplete="address-level2" placeholder="Town or area" className={field} />
+          <input id="location" name="location" autoComplete="address-level2" placeholder="Area in Chennai" className={field} />
         </div>
       </div>
       <div>
         <label htmlFor="notes" className="font-semibold text-ink">Size and notes <span className="font-normal text-steel-500">(optional)</span></label>
-        <textarea id="notes" name="notes" rows={4} placeholder="For example: gate opening 12 ft wide, SS, laser-cut panels" className={field} />
+        <textarea id="notes" name="notes" rows={4} placeholder="For example: gate opening 12 ft wide, stainless steel, laser-cut panels" className={field} />
       </div>
-      <p className="border-l-4 border-weld bg-paper p-3 text-sm text-steel-700">
-        Photos help us quote faster. After WhatsApp opens with your message, attach photos of the site or a design you like.
+      <p className="border-l-4 border-weld bg-mist p-3 text-sm text-steel-700">
+        {hasWhatsApp
+          ? 'Photos help us quote faster. After WhatsApp opens with your message, attach photos of the site or a design you like.'
+          : 'This opens your email app with your details filled in. Photos help us quote faster, so attach photos of the site or a design you like before sending.'}
       </p>
-      <button type="submit" className="btn btn-primary w-full sm:w-auto"><WhatsAppIcon /> Send on WhatsApp</button>
+      <button type="submit" className="btn btn-primary w-full sm:w-auto">
+        {hasWhatsApp ? <><WhatsAppIcon /> Send on WhatsApp</> : <><MailIcon /> Send quote request <ArrowIcon /></>}
+      </button>
     </form>
   );
 }

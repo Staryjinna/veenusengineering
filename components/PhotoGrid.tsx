@@ -58,9 +58,9 @@ export default function PhotoGrid({ photos, categories, filterable = false }: { 
       <ul className={cx('grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4', filterable && 'mt-6')} aria-live="polite">
         {shown.map((p, i) => (
           <li key={p.file}>
-            <button type="button" onClick={(e) => show(i, e.currentTarget)} className="group relative block w-full overflow-hidden bg-steel-200" aria-label={`Enlarge photo: ${p.alt}`}>
+            <button type="button" onClick={(e) => show(i, e.currentTarget)} className="group relative block w-full overflow-hidden bg-steel-200" aria-label={filterable ? `${label(p.category)}: ${p.alt}. Enlarge photo` : `Enlarge photo: ${p.alt}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={p.src} alt={p.alt} width={p.width} height={p.height} loading="lazy" decoding="async" className="aspect-[5/4] w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img src={p.thumb} alt="" width={p.thumbWidth} height={p.thumbHeight} sizes="(min-width:1024px) 280px, (min-width:768px) 33vw, 50vw" loading={i < 4 ? 'eager' : 'lazy'} {...(i === 0 ? { fetchPriority: 'high' as const } : {})} decoding="async" className="aspect-[5/4] w-full object-cover transition-transform duration-500 group-hover:scale-105" />
               {filterable && <span className="absolute bottom-0 left-0 bg-ink/90 px-2 py-1 font-display text-sm font-semibold uppercase tracking-widest text-weld">{label(p.category)}</span>}
             </button>
           </li>
@@ -82,7 +82,7 @@ export default function PhotoGrid({ photos, categories, filterable = false }: { 
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={current.src} alt={current.alt} width={current.width} height={current.height} style={{ maxWidth: `min(100%, ${Math.round(current.width * 1.7)}px)` }} className="max-h-[75vh] w-auto object-contain" />
             <p className="mt-4 max-w-2xl text-center text-steel-200">{current.alt}</p>
-            <p className="mt-1 text-sm text-steel-400">{(open ?? 0) + 1} / {shown.length}</p>
+            <p className="mt-1 text-sm text-steel-400">{(open ?? 0) + 1} / {shown.length}{current.credit && <> · Photo: {current.credit} / Unsplash</>}</p>
             {shown.length > 1 && (
               <div className="mt-4 flex gap-3">
                 <button type="button" onClick={() => step(-1)} aria-label="Previous photo" className="grid h-12 w-12 place-items-center border border-white/40 text-white hover:border-weld"><ArrowIcon className="rotate-180" /></button>

@@ -24,16 +24,16 @@ export default function MobileNav() {
         aria-controls="mobile-menu"
         aria-label={open ? 'Close menu' : 'Open menu'}
         onClick={() => setOpen((o) => !o)}
-        className="grid h-11 w-11 place-items-center rounded-sm border border-white/25 text-white"
+        className="grid h-11 w-11 place-items-center rounded-sm border border-steel-300 text-ink"
       >
         {open ? <CloseIcon /> : <MenuIcon />}
       </button>
       {open && (
-        <nav id="mobile-menu" aria-label="Main" className="blueprint absolute inset-x-0 top-full border-t border-white/10 pb-6 shadow-2xl">
+        <nav id="mobile-menu" aria-label="Main" className="absolute inset-x-0 top-full border-b border-steel-200 bg-white pb-6 shadow-xl">
           <ul className="container-x pt-2">
             {nav.map((l) => (
-              <li key={l.href} className="border-b border-white/10">
-                <Link href={l.href} onClick={() => setOpen(false)} className="flex items-center justify-between py-4 font-display text-2xl font-bold uppercase tracking-wide text-white">
+              <li key={l.href} className="border-b border-steel-200">
+                <Link href={l.href} onClick={() => setOpen(false)} className="flex items-center justify-between py-4 font-display text-2xl font-bold uppercase tracking-wide text-ink">
                   {l.label}
                   <span aria-hidden className="text-weld">→</span>
                 </Link>

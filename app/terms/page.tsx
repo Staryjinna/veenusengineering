@@ -3,8 +3,8 @@ import LegalPage from '@/components/LegalPage';
 import { terms } from '@/data/policies';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions | Veenus Engineering',
-  description: 'Terms for fabrication and installation work by Veenus Engineering: quotations, payment, timelines, warranty and liability.',
+  title: 'Terms & Conditions | Velan Industries',
+  description: 'Terms for fabrication and installation work by Velan Industries: quotations, payment, timelines, warranty and liability.',
   alternates: { canonical: '/terms/' },
 };
 
