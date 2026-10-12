@@ -3,7 +3,6 @@ import { business, contact, hours } from '@/data/contact';
 import { services } from '@/data/services';
 import { hasPhone, hasWhatsApp, waLink } from '@/lib/quote';
 import { ClockIcon, InstagramIcon, MailIcon, PhoneIcon, PinIcon, WhatsAppIcon, YoutubeIcon } from './Icons';
-import Logo from './Logo';
 
 export default function Footer() {
   const social = [
@@ -15,7 +14,10 @@ export default function Footer() {
     <footer className="border-t-4 border-weld bg-mist pb-24 pt-14 md:pb-10">
       <div className="container-x grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
         <div>
-          <Logo size="lg" />
+          <Link href="/" aria-label="Velan Industries Steel Works, home">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/logo.webp" alt="Velan Industries Steel Works logo" width={800} height={715} loading="lazy" className="h-36 w-auto mix-blend-multiply" />
+          </Link>
           <p className="mt-4 max-w-xs text-steel-600">
             Steel works in Chennai. SS &amp; MS gates, railings, grills, rolling shutters and roofing, designed, fabricated and installed.
           </p>

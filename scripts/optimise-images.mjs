@@ -39,7 +39,8 @@ fs.writeFileSync(galleryPath, JSON.stringify(gallery, null, 2) + '\n');
 
 // ── Logo ── (assets/brand/velan-logo.webp is a 1254x1254 square on white)
 const LOGO = path.join(ROOT, 'assets/brand/velan-logo.webp');
-await sharp(LOGO).resize({ width: 640 }).webp({ quality: 90 }).toFile(path.join(IMG, 'logo.webp'));
+// Full logo, trimmed of its white margin (used in the footer, structured data and share image)
+await sharp(LOGO).trim({ background: '#ffffff', threshold: 12 }).resize({ width: 800, withoutEnlargement: true }).webp({ quality: 92 }).toFile(path.join(IMG, 'logo.webp'));
 // Emblem only (the V + spark). The site sets the name in type beside it.
 const MARK = { left: 300, top: 175, width: 650, height: 512 };
 await sharp(LOGO).extract(MARK).resize({ height: 240 }).webp({ quality: 92 }).toFile(path.join(IMG, 'logo-mark.webp'));
@@ -52,17 +53,15 @@ for (const w of [720, 1200, 1600]) {
 }
 
 // ── Open Graph image 1200x630 ──
+const logoOg = await sharp(LOGO).trim({ background: '#ffffff', threshold: 12 }).resize({ height: 330 }).png().toBuffer();
 const text = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
   <rect x="0" y="0" width="14" height="630" fill="#ef7828"/>
-  <text x="64" y="330" font-family="Arial Narrow, Arial, sans-serif" font-weight="800" font-size="104" fill="#2c333a" letter-spacing="2">VELAN</text>
-  <text x="64" y="420" font-family="Arial Narrow, Arial, sans-serif" font-weight="700" font-size="58" fill="#2c333a" letter-spacing="14">INDUSTRIES</text>
-  <rect x="64" y="448" width="120" height="6" fill="#ef7828"/>
-  <text x="64" y="510" font-family="Arial, sans-serif" font-size="32" fill="#4a5560">Steel works in Chennai: gates, railings,</text>
-  <text x="64" y="552" font-family="Arial, sans-serif" font-size="32" fill="#4a5560">shutters and roofing</text>
+  <text x="64" y="530" font-family="Arial, sans-serif" font-size="32" fill="#4a5560">Steel works in Chennai: gates, railings,</text>
+  <text x="64" y="572" font-family="Arial, sans-serif" font-size="32" fill="#4a5560">shutters and roofing</text>
 </svg>`);
-const photo = await sharp(hero).resize(560, 630, { fit: 'cover', position: 'centre' }).toBuffer();
+const photo = await sharp(hero).resize(520, 630, { fit: 'cover', position: 'centre' }).toBuffer();
 await sharp({ create: { width: 1200, height: 630, channels: 3, background: '#ffffff' } })
-  .composite([{ input: photo, left: 640, top: 0 }, { input: text }])
+  .composite([{ input: photo, left: 680, top: 0 }, { input: logoOg, left: 64, top: 90, blend: 'multiply' }, { input: text }])
   .jpeg({ quality: 84, mozjpeg: true }).toFile(path.join(IMG, 'og.jpg'));
 
 console.log(`Optimised ${gallery.filter((g) => g.include).length} photos, logo, favicon, hero and OG image`);
